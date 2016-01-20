@@ -1,0 +1,18 @@
+#button{
+	width: 15vw;
+	height: 7.5vh;
+	position: absolute;
+	top: 80vh;
+	left: 42.5vw;
+	background:#222222;
+	color: white;
+	font-family: 'Raleway', sans-serif;
+	text-align: center;
+	line-height: 7.5vh;
+}
+
+#title{
+	color: #222222;
+	text-align: center;
+	font-family: 'Raleway', sans-serif;
+}

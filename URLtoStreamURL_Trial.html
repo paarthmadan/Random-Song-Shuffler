@@ -1,0 +1,64 @@
+<html>
+
+
+<head>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+	<script src="https://connect.soundcloud.com/sdk/sdk-3.0.0.js"></script>
+</head>
+
+
+
+<script>
+var client_id = "d39a2564046490d175c655c3a1a61472"
+var arrayOfURLS = []
+var numberOfIds
+
+
+
+var urlToStreamUrl = function(url){
+
+$.ajax(
+
+{
+
+	url:"http://api.soundcloud.com/resolve?url=" + url + "&client_id=" + client_id,
+	data: {},
+	type: "GET",
+	success:function(data){
+		addToArray(data.stream_url)
+	}
+	
+	
+
+
+}
+
+);
+
+}
+urlToStreamUrl("https://soundcloud.com/octobersveryown/drake-back-to-back-freestyle")
+urlToStreamUrl("https://soundcloud.com/plam8/panjabi-mc-moorni-balle-balle")
+urlToStreamUrl("https://soundcloud.com/harlem_fetty/fetty-wap-trap-queen-rough")
+
+
+
+
+var addToArray = function(url){
+	arrayOfURLS.push(url)
+}
+
+
+
+
+
+</script>
+
+
+
+
+<body id = "main">
+</body>
+
+
+
+</html>

@@ -1,0 +1,89 @@
+<html>
+
+
+<head>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+	<script src="https://connect.soundcloud.com/sdk/sdk-3.0.0.js"></script>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+	<link href='https://fonts.googleapis.com/css?family=Raleway:400,300' rel='stylesheet' type='text/css'>
+</head>
+
+
+
+<script>
+
+var client_id = "d39a2564046490d175c655c3a1a61472"
+var keyword = "J Cole"
+var limit = "100"
+var tracksArray = []
+var randomNumber = 0
+
+var randomize = function(){
+ randomNumber = Math.floor((Math.random() * 85) + 1);
+ done(randomNumber)
+}
+$.ajax(
+
+{
+url:"https://api.soundcloud.com/tracks?client_id=" + client_id + "&q=" + keyword + "&limit=" + limit,
+
+success:function(tracks){
+	
+	for (var i = 0; i < tracks.length; i++) {
+		// console.log(tracks[i].permalink_url)
+
+		tracksArray[i] = tracks[i].permalink_url
+
+
+	};
+
+done(randomNumber)
+}
+
+
+
+
+
+}
+
+
+);
+
+
+
+
+var done = function(randomNumber){
+
+SC.oEmbed(tracksArray[randomNumber], {
+  auto_play: true
+}).then(function(embed){
+  document.getElementById("main").innerHTML = embed.html
+});
+
+
+}
+
+
+
+
+</script>
+
+
+<body>
+<h1 id = "title">Song Shuffler - API TRIAL</h1>
+<p id = "main">
+
+
+
+</p>
+
+<div id = "button" onclick="randomize()">Randomize</div>
+</body>
+
+
+
+
+
+
+
+</html>

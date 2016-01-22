@@ -13,7 +13,7 @@
 <script>
 
 var client_id = "d39a2564046490d175c655c3a1a61472"
-var keyword = "J Cole"
+
 var limit = "100"
 var tracksArray = []
 var randomNumber = 0
@@ -22,7 +22,8 @@ var randomize = function(){
  randomNumber = Math.floor((Math.random() * 85) + 1);
  done(randomNumber)
 }
-$.ajax(
+var search = function(keyword){
+	$.ajax(
 
 {
 url:"https://api.soundcloud.com/tracks?client_id=" + client_id + "&q=" + keyword + "&limit=" + limit,
@@ -50,7 +51,7 @@ done(randomNumber)
 );
 
 
-
+}
 
 var done = function(randomNumber){
 
@@ -63,21 +64,30 @@ SC.oEmbed(tracksArray[randomNumber], {
 
 }
 
+var takeQuery = function(){
+	var input = prompt("Enter a query:")
+	search(input)
+}
 
 
+search("J Cole")
 
 </script>
 
 
 <body>
 <h1 id = "title">Song Shuffler - API TRIAL</h1>
+
 <p id = "main">
 
 
 
 </p>
+<h2 id ="text">Enter search query including artists, themes, genres or anything else!</h2>
+
 
 <div id = "button" onclick="randomize()">Randomize</div>
+<div id = "button2" onclick="takeQuery()">Change Query</div>
 </body>
 
 

@@ -1,6 +1,22 @@
+
 #button{
 	width: 15vw;
-	height: 7.5vh;
+	height: 6vh;
+	position: absolute;
+	top: 72.5vh;
+	left: 42.5vw;
+	background:#222222;
+	color: white;
+	font-family: 'Raleway', sans-serif;
+	text-align: center;
+	line-height: 6vh;
+	margin-top: 10vh;
+}
+
+
+#button2{
+	width: 15vw;
+	height: 6vh;
 	position: absolute;
 	top: 80vh;
 	left: 42.5vw;
@@ -8,11 +24,27 @@
 	color: white;
 	font-family: 'Raleway', sans-serif;
 	text-align: center;
-	line-height: 7.5vh;
+	line-height: 6vh;
+	margin-top: 10vh;
 }
+
+
 
 #title{
 	color: #222222;
 	text-align: center;
 	font-family: 'Raleway', sans-serif;
+}
+
+
+#textField{
+	position: absolute;
+	left: 45vw;
+	margin-bottom: 10vh;
+}
+#text{
+	font-family: 'Raleway', sans-serif;
+	text-align: center;
+	color: #222222;
+
 }

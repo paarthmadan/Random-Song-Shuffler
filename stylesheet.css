@@ -13,6 +13,10 @@
 	margin-top: 10vh;
 }
 
+#button:hover , #button2:hover{
+	background: #000000;
+}
+
 
 #button2{
 	width: 15vw;
